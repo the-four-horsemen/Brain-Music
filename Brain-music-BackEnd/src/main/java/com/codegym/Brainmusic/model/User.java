@@ -14,22 +14,22 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Pattern(regexp = "^[a-z0-9._-]{3,15}$")
+//    @NotBlank
+//    @Pattern(regexp = "^[a-z0-9._-]{3,15}$")
     private String username;
 
-    @NotBlank
-    @Pattern(regexp = "((?=.d)(?=.[a-z])(?=.[A-Z])(?=.[!.#$@_+,?-]).{8,50})")
+//    @NotBlank
+//    @Pattern(regexp = "((?=.d)(?=.[a-z])(?=.[A-Z])(?=.[!.#$@_+,?-]).{8,50})")
     private String password;
 
-    @NotBlank
+//    @NotBlank
     private Long gender;
 
-    @NotBlank
+//    @NotBlank
     private Long phonenumber;
-
-    @NotBlank
-    @Email
+//
+//    @NotBlank
+//    @Email
     private String email;
 
 
