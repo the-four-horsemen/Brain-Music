@@ -15,17 +15,17 @@ public class User {
     private Long id;
 
     @NotBlank
+    @Pattern(regexp = "^[a-z0-9._-]{3,15}$")
     private String username;
 
     @NotBlank
-    @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$\n")
+    @Pattern(regexp = "((?=.d)(?=.[a-z])(?=.[A-Z])(?=.[!.#$@_+,?-]).{8,50})")
     private String password;
 
     @NotBlank
     private Long gender;
 
     @NotBlank
-    @Pattern(regexp = "(09|01[2|6|8|9])+([0-9]{8})\b")
     private Long phonenumber;
 
     @NotBlank
