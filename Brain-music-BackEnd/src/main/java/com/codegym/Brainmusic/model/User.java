@@ -2,6 +2,10 @@ package com.codegym.Brainmusic.model;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.NotBlank;
+
 @Entity
 @Table(name = "user")
 @EntityListeners(AuditingEntityListener.class)
@@ -10,16 +14,22 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @NotBlank
     private String username;
 
-
+    @NotBlank
+    @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$\n")
     private String password;
 
+    @NotBlank
     private Long gender;
 
+    @NotBlank
+    @Pattern(regexp = "(09|01[2|6|8|9])+([0-9]{8})\b")
     private Long phonenumber;
 
+    @NotBlank
+    @Email
     private String email;
 
 
