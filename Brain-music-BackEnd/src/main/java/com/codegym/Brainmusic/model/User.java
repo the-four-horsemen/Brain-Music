@@ -1,10 +1,8 @@
 package com.codegym.Brainmusic.model;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "user")
@@ -14,20 +12,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @NotBlank
+    //    @NotBlank
 //    @Pattern(regexp = "^[a-z0-9._-]{3,15}$")
     private String username;
 
-//    @NotBlank
+    //    @NotBlank
 //    @Pattern(regexp = "((?=.d)(?=.[a-z])(?=.[A-Z])(?=.[!.#$@_+,?-]).{8,50})")
     private String password;
 
-//    @NotBlank
+    //    @NotBlank
     private Long gender;
 
-//    @NotBlank
-    private Long phonenumber;
-//
+    //    @NotBlank
+    private String phonenumber;
+    //
 //    @NotBlank
 //    @Email
     private String email;
@@ -36,13 +34,6 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, Long gender, Long phonenumber, String email) {
-        this.username = username;
-        this.password = password;
-        this.gender = gender;
-        this.phonenumber = phonenumber;
-        this.email = email;
-    }
 
     public Long getId() {
         return id;
@@ -76,11 +67,11 @@ public class User {
         this.gender = gender;
     }
 
-    public Long getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(Long phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
 
