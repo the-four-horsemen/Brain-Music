@@ -10,6 +10,7 @@ export class ConfirmPasswordValidator {
       control.get('confirmPassword').setErrors({ConfirmPassword: true});
     } else {
       return null;
+      //
     }
   }
 }
