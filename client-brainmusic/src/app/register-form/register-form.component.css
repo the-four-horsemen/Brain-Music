@@ -1,0 +1,45 @@
+.container-fluid {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  top: 5em;
+  width: 35%;
+  height: 75%;
+  border-radius: 20px;
+}
+
+.container-fluid .register-form {
+  position: relative;
+  top: 5%;
+}
+
+.container-fluid .register-form h1 {
+  font-size: 46px;
+  margin: 25px;
+  color: #000;
+}
+
+.col-12 input[type=text], .col-12 input[type=email], .col-12 input[type=password] {
+  width: 75%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.col-12 input[type=radio] {
+  margin: 20px;
+  outline: none;
+}
+
+.col-12 label {
+  color: #fff;
+}
+
+.col-12 input[type=submit] {
+  padding: 5px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #cccccc;
+  outline: none;
+}
