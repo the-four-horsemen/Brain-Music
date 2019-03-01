@@ -4,10 +4,10 @@
 
   <div class="form-group">
     <label>Username</label>
-    <input type="text" class="form-control" placeholder="Username" formControlName="userName">
+    <input type="text" class="form-control" placeholder="Username" formControlName="username">
   </div>
   <div class="alert alert-danger" role="alert"
-       *ngIf="registerForm.get('userName').invalid && registerForm.get('userName').touched">
+       *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
     Invalid Username!
   </div>
 
@@ -55,13 +55,13 @@
 
   <div class="form-group">
     <label>Phone</label>
-    <input type="text" class="form-control" placeholder="Enter phone" formControlName="phone">
+    <input type="text" class="form-control" placeholder="Enter phone" formControlName="phonenumber">
   </div>
   <div class="alert alert-danger" role="alert"
-       *ngIf="registerForm.get('phone').invalid && registerForm.get('phone').touched">
-    <span *ngIf="registerForm.get('phone').hasError('required')">Phone is required</span>
+       *ngIf="registerForm.get('phonenumber').invalid && registerForm.get('phonenumber').touched">
+    <span *ngIf="registerForm.get('phonenumber').hasError('required')">Phone is required</span>
     <span
-      *ngIf="registerForm.get('phone').hasError('pattern')">Phone must start with +84 followed by 9 or 10 digits.</span>
+      *ngIf="registerForm.get('phonenumber').hasError('pattern')">Phone must start with +84 followed by 9 or 10 digits.</span>
   </div>
 
   <button type="submit" class="btn btn-primary" [disabled]="registerForm.status==='INVALID'">Submit</button>

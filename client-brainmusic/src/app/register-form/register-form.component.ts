@@ -1,13 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ConfirmPasswordValidator} from "./confirm-password.validator";
-
-function comparePassword(c: AbstractControl) {
-  const v = c.value;
-  return (v.password === v.confirmPassword) ? null : {
-    passwordnotmatch: true
-  };
-}
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ConfirmPasswordValidator} from './confirm-password.validator';
+import {RegisterService} from '../shared/register.service';
+import {User} from '../shared/user.model';
 
 @Component({
   selector: 'app-register-form',
@@ -15,22 +10,22 @@ function comparePassword(c: AbstractControl) {
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
+  user: User;
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              public service: RegisterService) {
   }
 
   ngOnInit() {
     this.registerForm = this.fb.group({
-      userName: ['', Validators.required],
+      username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      country: ['', Validators.required],
-      age: ['', [Validators.required, Validators.min(18)]],
       gender: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.pattern(/^\+84\d{9,10}$/)]]
+      phonenumber: ['', [Validators.required, Validators.pattern(/^\+84\d{9,10}$/)]]
     }, {
       validator: ConfirmPasswordValidator.MatchPassword
     });
@@ -41,6 +36,15 @@ export class RegisterFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm);
+    if (this.registerForm.valid) {
+      const {value} = this.registerForm;
+      this.service.createUser(value)
+        .subscribe(data => {
+          console.log(value);
+        }, error => {
+          console.log(error);
+        });
+    }
   }
+
 }
