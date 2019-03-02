@@ -7,11 +7,13 @@ import {RegisterFormComponent} from './register-form/register-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import {RegisterService} from "./shared/register.service";
+import { EmailFormComponent } from './email-form/email-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    EmailFormComponent
   ],
   imports: [
     BrowserModule,
