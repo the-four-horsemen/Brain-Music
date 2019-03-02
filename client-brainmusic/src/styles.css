@@ -1,7 +1,8 @@
-body{
+body {
   margin: 0;
   padding: 0;
 }
+
 .register-background {
   height: 100%;
   background-image: linear-gradient(to right, #ff5722, #ff9800);
