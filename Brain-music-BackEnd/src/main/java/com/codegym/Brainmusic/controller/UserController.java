@@ -3,9 +3,12 @@ package com.codegym.Brainmusic.controller;
 import com.codegym.Brainmusic.model.User;
 import com.codegym.Brainmusic.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -21,7 +24,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public User createUser (@Valid @RequestBody User user) {
+    public User createUser(@Valid @RequestBody User user){
         return userRepository.save(user);
     }
 }
