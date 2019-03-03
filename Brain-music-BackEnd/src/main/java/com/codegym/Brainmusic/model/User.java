@@ -34,9 +34,7 @@ public class User {
     @Email(message = "Email is not valid")
     private String email;
 
-    public User() {
-    }
-
+    public User() {}
 
     public Long getId() {
         return id;
