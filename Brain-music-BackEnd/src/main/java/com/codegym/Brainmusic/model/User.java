@@ -1,8 +1,10 @@
 package com.codegym.Brainmusic.model;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "user")
@@ -12,28 +14,29 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //    @NotBlank
-//    @Pattern(regexp = "^[a-z0-9._-]{3,15}$")
+    @NotBlank
+    @Pattern(regexp = "^[a-z0-9._]{3,15}$", message = "Username should have letter, number and character")
+    @Column(unique=true)
     private String username;
 
-    //    @NotBlank
-//    @Pattern(regexp = "((?=.d)(?=.[a-z])(?=.[A-Z])(?=.[!.#$@_+,?-]).{8,50})")
+    @NotBlank
+    @Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@.#$%]).{6,20})", message = "Password should have at least 6 characters including number, uppercase, lowercase letters and characters")
     private String password;
 
-    //    @NotBlank
-    private Long gender;
+    @NotBlank
+    private String gender;
 
-    //    @NotBlank
+    @NotBlank
+    @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
+    @Column(unique=true)
     private String phonenumber;
-    //
-//    @NotBlank
-//    @Email
+
+    @NotBlank
+    @Email(message = "Email is not valid")
+    @Column(unique=true)
     private String email;
 
-
-    public User() {
-    }
-
+    public User() {}
 
     public Long getId() {
         return id;
@@ -59,13 +62,9 @@ public class User {
         this.password = password;
     }
 
-    public Long getGender() {
-        return gender;
-    }
+    public String getGender() { return gender; }
 
-    public void setGender(Long gender) {
-        this.gender = gender;
-    }
+    public void setGender(String gender) { this.gender = gender; }
 
     public String getPhonenumber() {
         return phonenumber;
