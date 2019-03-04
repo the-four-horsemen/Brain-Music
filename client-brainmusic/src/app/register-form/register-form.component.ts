@@ -24,7 +24,7 @@ export class RegisterFormComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
       gender: ['', Validators.required],
-      phonenumber: ['', [Validators.required, Validators.pattern(/^\+84\d{9,10}$/)]]
+      phonenumber: ['', [Validators.required, Validators.pattern(/^\0\d{9,10}$/)]]
     }, {
       validator: ConfirmPasswordValidator.MatchPassword
     });
