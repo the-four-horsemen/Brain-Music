@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class EmailService {
 
-  private readonly API_URL = 'http://localhost:8080/email';
+  private readonly API_URL = 'http://178.128.97.6/email/email';
 
   constructor(private http: HttpClient) {
   }
