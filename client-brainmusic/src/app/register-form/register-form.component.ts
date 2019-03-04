@@ -12,7 +12,6 @@ import {User} from '../shared/user.model';
 export class RegisterFormComponent implements OnInit {
   user: User;
   registerForm: FormGroup;
-  submitted = false;
 
   constructor(private fb: FormBuilder,
               public service: RegisterService) {
