@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaAuditing
 public class BrainMusicApplication extends ServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BrainMusicApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BrainMusicApplication.class, args);
+    }
 
 }
