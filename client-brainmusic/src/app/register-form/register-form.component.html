@@ -8,7 +8,7 @@
   </div>
   <div class="alert alert-danger" role="alert"
        *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
-    Invalid Username!
+    User name need letters, numbers and character
   </div>
 
   <div class="form-group">
@@ -26,7 +26,7 @@
   </div>
   <div class="alert alert-danger" role="alert"
        *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid">
-    Password is required and Password must be at least 6 characters
+    Password is required and must be at least 6 characters included number, uppercase, lowercase and character
   </div>
 
   <div class="form-group">
@@ -61,7 +61,7 @@
        *ngIf="registerForm.get('phonenumber').invalid && registerForm.get('phonenumber').touched">
     <span *ngIf="registerForm.get('phonenumber').hasError('required')">Phone is required</span>
     <span
-      *ngIf="registerForm.get('phonenumber').hasError('pattern')">Phone must start with +84 followed by 9 or 10 digits.</span>
+      *ngIf="registerForm.get('phonenumber').hasError('pattern')">Phone must start with 0 followed by 9 digits.</span>
   </div>
 
   <button type="submit" class="btn btn-primary" [disabled]="registerForm.status==='INVALID'">Submit</button>
