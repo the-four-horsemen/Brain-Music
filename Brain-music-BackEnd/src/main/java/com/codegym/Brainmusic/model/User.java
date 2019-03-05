@@ -1,13 +1,11 @@
 package com.codegym.Brainmusic.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "user")
@@ -17,28 +15,29 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @NotBlank
+    @Pattern(regexp = "^[a-z0-9._]{3,15}$", message = "Username should have letter, number and character")
+    @Column(unique = true)
     private String username;
 
-
+    @NotBlank
+    @Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@.#$%]).{6,20})", message = "Password should have at least 6 characters including number, uppercase, lowercase letters and characters")
     private String password;
 
-    private Long gender;
+    @NotBlank
+    private String gender;
 
-    private Long phonenumber;
+    @NotBlank
+//    @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
+    @Column(unique = true)
+    private String phonenumber;
 
+    @NotBlank
+    @Email(message = "Email is not valid")
+    @Column(unique = true)
     private String email;
 
-
     public User() {
-    }
-
-    public User(String username, String password, Long gender, Long phonenumber, String email) {
-        this.username = username;
-        this.password = password;
-        this.gender = gender;
-        this.phonenumber = phonenumber;
-        this.email = email;
     }
 
     public Long getId() {
@@ -65,19 +64,19 @@ public class User {
         this.password = password;
     }
 
-    public Long getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Long gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public Long getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(Long phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
 
