@@ -1,3 +1,4 @@
+
 <form class="container" [formGroup]="emailForm" (ngSubmit)="onSubmit()">
   <h1>Reply Feedback</h1>
   <div class="title-box">
@@ -24,6 +25,7 @@
          *ngIf="emailForm.get('feedback').invalid && emailForm.get('feedback').touched">
       Invalid Feedback!
     </div>
-    <button type="submit" class="btn btn-primary col-md-12" [disabled]="emailForm.status==='INVALID'">Send Email</button>
+    <button type="submit" class="btn btn-primary col-md-12" [disabled]="emailForm.status==='INVALID'">Send Email
+    </button>
   </div>
 </form>

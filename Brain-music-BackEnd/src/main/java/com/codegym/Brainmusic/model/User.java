@@ -16,19 +16,19 @@ public class User {
     private Long id;
 
     @NotBlank
-    @Pattern(regexp = "^[a-z0-9._]{3,15}$", message = "Username should have letter, number and character")
+    @Pattern(regexp = "^[a-z0-9]{3,15}$", message = "Username should have letter, number and character")
     @Column(unique = true)
     private String username;
 
     @NotBlank
-    @Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@.#$%]).{6,20})", message = "Password should have at least 6 characters including number, uppercase, lowercase letters and characters")
+    @Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]){6,20})", message = "Password should have at least 6 characters and must contain number, uppercase, lowercase letters")
     private String password;
 
     @NotBlank
     private String gender;
 
     @NotBlank
-//    @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
+    @Pattern(regexp = "((0)[0-9]{9})", message = "Phone number must start with 0 and be 9 digits")
     @Column(unique = true)
     private String phonenumber;
 
