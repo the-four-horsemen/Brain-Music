@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: test
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: hjjk
+Implementation-Vendor-Id: com.the4horsemen
+Created-By: IntelliJ IDEA
+Build-Jdk: 11.0.1
+Main-Class: ${start-class}
+
