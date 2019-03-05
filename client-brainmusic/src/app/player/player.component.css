@@ -56,13 +56,13 @@ h3, h4 {
   .dropdown-menu li a:hover {
     background-color: red !important;
   }
-  .logo{
+  /* .logo{
     background: url(../../assets/background/logo.png) no-repeat 50% 50%;
     background-size: contain;
     width: 80px;
     height: 60px;
     float: left;
-  }
+  } */
   audio{
     width: 100%;
   }
