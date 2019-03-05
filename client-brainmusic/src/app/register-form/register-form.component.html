@@ -21,7 +21,8 @@
                 <input type="text" class="form-control" placeholder="Username" formControlName="username">
                 <div class="alert p-1" role="alert"
                      *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
-                  Invalid Username!
+                  <span *ngIf="registerForm.get('username').hasError('required')">User name is required</span>
+                  <span *ngIf="registerForm.get('username').hasError('pattern')">User name must contain at least 3 letters and numbers </span>
                 </div>
               </div>
 
@@ -30,7 +31,8 @@
                 <input type="password" class="form-control" placeholder="Password" formControlName="password">
                 <div class="alert p-1" role="alert"
                      *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid">
-                  Password is required and Password must be at least 6 characters
+                  <span *ngIf="registerForm.get('password').hasError('required')">Password is required</span>
+                  <span *ngIf="registerForm.get('password').hasError('pattern')">Password must contain at least 6 letters, uppercase and lowercase</span>
                 </div>
 
               </div>
@@ -76,7 +78,7 @@
                      *ngIf="registerForm.get('phonenumber').invalid && registerForm.get('phonenumber').touched">
                   <span *ngIf="registerForm.get('phonenumber').hasError('required')">Phone is required</span>
                   <span
-                    *ngIf="registerForm.get('phonenumber').hasError('pattern')">Phone must start with +84 followed by 9 or 10 digits.</span>
+                    *ngIf="registerForm.get('phonenumber').hasError('pattern')">Phone must start with 0 followed by 9 digits.</span>
                 </div>
               </div>
 
