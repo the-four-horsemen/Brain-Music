@@ -10,13 +10,15 @@ import {RegisterService} from './shared/register.service';
 import {EmailFormComponent} from './email-form/email-form.component';
 import {AlertComponent} from './alert/alert.component';
 import {EmailService} from './shared/email.service';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterFormComponent,
     EmailFormComponent,
-    AlertComponent
+    AlertComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
