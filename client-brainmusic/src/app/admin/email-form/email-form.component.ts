@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Email} from '../shared/email.model';
-import {EmailService} from '../shared/email.service';
-import { NotificationService } from '../shared/notification.service';
+import {Email} from '../../shared/email.model';
+import {EmailService} from '../../shared/email.service';
+import {NotificationService} from '../../shared/notification.service';
 
 @Component({
   selector: 'app-email-form',
@@ -29,7 +29,7 @@ export class EmailFormComponent implements OnInit {
 
   resetForm() {
     this.emailForm = this.fb.group({
-      name: ['', Validators.required],
+      subject: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       feedback: ['', Validators.required]
     });
@@ -44,9 +44,8 @@ export class EmailFormComponent implements OnInit {
         }, error => {
           console.log(error);
         });
-      this.notificationService.success("Submited Successfully!");  
+      this.notificationService.success('Submited Successfully!');
       this.resetForm();
-
     }
   }
 }
