@@ -7,20 +7,20 @@ import {Feedback} from './feedback.model';
   providedIn: 'root'
 })
 export class FeedbackService {
-  private readonly API_URL_USER = 'http://localhost:8080/feedback';
+  private readonly API_URL_USER = 'http://localhost:8080/feedback/';
   formData: Feedback;
   list: Feedback[];
-  private readonly API_URL = 'http://localhost:8080/admin/feedback';
+  private readonly API_URL_ADMIN = 'http://localhost:8080/admin/feedbacks/';
 
   constructor(private http: HttpClient) {
   }
 
   getList() {
-    this.http.get(this.API_URL).toPromise().then(res =>  this.list = res as Feedback[]);
+    this.http.get(this.API_URL_ADMIN).toPromise().then(res =>  this.list = res as Feedback[]);
   }
 
   deleteFeedback(id: number) {
-    return this.http.delete(this.API_URL + id);
+    return this.http.delete(this.API_URL_ADMIN + id);
   }
   createFeedback(feedback: Partial<Feedback>): Observable<Feedback> {
     return this.http.post<Feedback>(this.API_URL_USER, feedback);
