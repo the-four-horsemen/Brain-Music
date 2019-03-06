@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Email} from '../shared/email.model';
-import {EmailService} from '../shared/email.service';
-import { NotificationService } from '../shared/notification.service';
+import {Email} from '../../shared/email.model';
+import {EmailService} from '../../shared/email.service';
+import {NotificationService} from '../../shared/notification.service';
 
 @Component({
   selector: 'app-email-form',

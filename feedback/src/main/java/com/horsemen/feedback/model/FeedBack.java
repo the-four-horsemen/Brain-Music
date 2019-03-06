@@ -21,7 +21,7 @@ public class FeedBack implements Serializable {
     private Long id;
 
     @NotBlank
-    private String title;
+    private String name;
 
     @NotBlank
     @Email
@@ -47,12 +47,12 @@ public class FeedBack implements Serializable {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
