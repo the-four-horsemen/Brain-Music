@@ -4,18 +4,18 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "http://localhost:4200")
 public class FeedBack {
-    private String name;
+    private String subject;
 
     private String email;
 
     private String feedback;
 
-    public String getName() {
-        return name;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getEmail() {

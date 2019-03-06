@@ -13,12 +13,12 @@
   background: linear-gradient(to left, rgba(236, 0, 140, 0.7), rgba(252, 103, 103, 0.7));
 }
 
-.main-feedback .right-feedback {
-  margin: auto;
-  background: url(/assets/background/feedback-right.jpeg) no-repeat;
-  float: right;
-  width: 50%;
-  height: 400px;
-  background-size: cover;
-  border-radius: 0 15px 15px 0;
-}
+/*.main-feedback .right-feedback {*/
+  /*margin: auto;*/
+  /*background: url(/assets/background/feedback-right.jpeg) no-repeat;*/
+  /*float: right;*/
+  /*width: 50%;*/
+  /*height: 400px;*/
+  /*background-size: cover;*/
+  /*border-radius: 0 15px 15px 0;*/
+/*}*/

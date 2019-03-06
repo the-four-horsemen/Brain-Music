@@ -16,6 +16,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AdminComponent} from './admin/admin.component';
 import {UserComponent} from './user/user.component';
 import {FeedbackComponent} from './user/feedback/feedback.component';
+import {FeedbackService} from './shared/feedback.service';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,10 @@ import {FeedbackComponent} from './user/feedback/feedback.component';
     MatDialogModule,
     BrowserAnimationsModule
   ],
-  providers: [RegisterService,
-    EmailService],
+  providers: [
+    RegisterService,
+    EmailService,
+    FeedbackService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
