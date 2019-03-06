@@ -7,12 +7,12 @@ import {Feedback} from './feedback.model';
   providedIn: 'root'
 })
 export class FeedbackService {
-  private readonly API_URL = 'http://localhost:8080/feedback';
+  private readonly API_URL_USER = 'http://localhost:8080/feedback';
 
   constructor(private http: HttpClient) {
   }
 
   createFeedback(feedback: Partial<Feedback>): Observable<Feedback> {
-    return this.http.post<Feedback>(this.API_URL, feedback);
+    return this.http.post<Feedback>(this.API_URL_USER, feedback);
   }
 }
