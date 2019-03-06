@@ -10,12 +10,7 @@ import {RegisterService} from './shared/register.service';
 import {EmailFormComponent} from './admin/email-form/email-form.component';
 import {AlertComponent} from './alert/alert.component';
 import {EmailService} from './shared/email.service';
-import { PlayerComponent } from './player/player.component';
-import {MatSnackBarModule, MatDialogModule} from '@angular/material'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListFeedbackComponent } from './list-feedback/list-feedback.component';
-import {FeedbackService} from './shared/feedback.service';
-import {MusicComponent} from './music/music.component';
+import {ListFeedbackComponent} from './list-feedback/list-feedback.component';
 import {PlayerComponent} from './user/player/player.component';
 import {MatDialogModule, MatSnackBarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -32,7 +27,6 @@ import {FeedbackService} from './shared/feedback.service';
     AlertComponent,
     PlayerComponent,
     ListFeedbackComponent,
-    MusicComponent,
     PlayerComponent,
     AdminComponent,
     UserComponent,
@@ -47,8 +41,10 @@ import {FeedbackService} from './shared/feedback.service';
     MatDialogModule,
     BrowserAnimationsModule
   ],
-  providers: [RegisterService,
-    EmailService, FeedbackService],
+  providers: [
+    RegisterService,
+    EmailService,
+    FeedbackService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

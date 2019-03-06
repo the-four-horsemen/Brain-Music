@@ -1,5 +1,5 @@
 export class Feedback {
-  feedbackId: number;
+  id: number;
   name: string;
   email: string;
   feedback: string;
