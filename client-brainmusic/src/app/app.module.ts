@@ -10,7 +10,9 @@ import {RegisterService} from './shared/register.service';
 import {EmailFormComponent} from './email-form/email-form.component';
 import {AlertComponent} from './alert/alert.component';
 import {EmailService} from './shared/email.service';
-import { MusicComponent } from './music/music.component';
+import { PlayerComponent } from './player/player.component';
+import {MatSnackBarModule, MatDialogModule} from '@angular/material'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,16 @@ import { MusicComponent } from './music/music.component';
     RegisterFormComponent,
     EmailFormComponent,
     AlertComponent,
-    MusicComponent
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [RegisterService,
     EmailService],
