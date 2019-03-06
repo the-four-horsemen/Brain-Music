@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -7,3 +8,10 @@ body {
   height: 100%;
   background-image: linear-gradient(to right, #ff5722, #ff9800);
 }
+.navbar-brand{
+  background: url('assets/background/logo.png') no-repeat 50% 50%;
+  background-size: contain;
+  width: 180px;
+  height: 80px;
+}
+
