@@ -13,6 +13,9 @@ import {EmailService} from './shared/email.service';
 import { PlayerComponent } from './player/player.component';
 import {MatSnackBarModule, MatDialogModule} from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListFeedbackComponent } from './list-feedback/list-feedback.component';
+import {FeedbackService} from './shared/feedback.service';
+import {MusicComponent} from './music/music.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegisterFormComponent,
     EmailFormComponent,
     AlertComponent,
-    PlayerComponent
+    PlayerComponent,
+    ListFeedbackComponent,
+    MusicComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   providers: [RegisterService,
-    EmailService],
+    EmailService, FeedbackService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
