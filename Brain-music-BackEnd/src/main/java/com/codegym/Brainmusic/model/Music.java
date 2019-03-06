@@ -1,10 +1,6 @@
 package com.codegym.Brainmusic.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -30,7 +26,6 @@ public class Music {
     @Column(unique = true)
     private String songUrl;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;

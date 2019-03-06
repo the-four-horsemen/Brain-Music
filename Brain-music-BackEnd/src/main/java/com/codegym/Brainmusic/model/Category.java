@@ -18,7 +18,7 @@ public class Category {
     @Column(unique = true)
     private String categoryName;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(targetEntity = Music.class)
     private Set<Music> musics;
 
     private Category(){}
