@@ -8,15 +8,14 @@ import {Feedback} from './feedback.model';
 })
 export class FeedbackService {
   private readonly API_URL_USER = 'http://localhost:8080/feedback/';
+  private readonly API_URL_ADMIN = 'http://localhost:8080/admin/feedbacks/';
   formData: Feedback;
   list: Feedback[];
-  private readonly API_URL_ADMIN = 'http://localhost:8080/admin/feedbacks/';
-
   constructor(private http: HttpClient) {
   }
 
   getList() {
-    this.http.get(this.API_URL_ADMIN).toPromise().then(res =>  this.list = res as Feedback[]);
+    this.http.get(this.API_URL_ADMIN).toPromise().then(res => this.list = res as Feedback[]);
   }
 
   deleteFeedback(id: number) {
