@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Email} from '../shared/email.model';
 import {EmailService} from '../shared/email.service';
+import { NotificationService } from '../shared/notification.service';
 
 @Component({
   selector: 'app-email-form',
@@ -14,7 +15,8 @@ export class EmailFormComponent implements OnInit {
   emailForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              public service: EmailService) {
+              public service: EmailService,
+              public notificationService: NotificationService) {
   }
 
   ngOnInit() {
@@ -42,7 +44,9 @@ export class EmailFormComponent implements OnInit {
         }, error => {
           console.log(error);
         });
+      this.notificationService.success("Submited Successfully!");  
       this.resetForm();
+
     }
   }
 }
