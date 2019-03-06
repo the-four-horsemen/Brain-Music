@@ -1,0 +1,10 @@
+<table class="table table-hover">
+  <tr *ngFor="let feedback of service.list">
+    <td (click)="populateForm(feedback)">{{feedback.email}}</td>
+    <td (click)="populateForm(feedback)">{{feedback.name}}</td>
+    <td (click)="populateForm(feedback)">{{feedback.feedback}}</td>
+    <td>
+      <button class="btn btn-sm btn-outline-danger" (click)="onDelete(feedback.id)"></button>
+    </td>
+  </tr>
+</table>

@@ -17,7 +17,7 @@ public class FeedBackController {
 
     @RequestMapping(value = "/email")
     public void sendEmail(@RequestBody FeedBack feedBack) {
-        sendSimpleMessage(feedBack.getEmail(), feedBack.getName(),
+        sendSimpleMessage(feedBack.getEmail(), feedBack.getSubject(),
                 feedBack.getFeedback());
     }
 
