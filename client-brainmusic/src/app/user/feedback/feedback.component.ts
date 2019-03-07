@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Feedback} from '../../shared/feedback.model';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FeedbackService} from '../../shared/feedback.service';
+import {MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-feedback',
@@ -13,7 +14,8 @@ export class FeedbackComponent implements OnInit {
   feedbackForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              public service: FeedbackService) {
+              public service: FeedbackService,
+              public diaglogRef: MatDialogRef<FeedbackComponent>) {
   }
 
   ngOnInit() {
@@ -24,6 +26,9 @@ export class FeedbackComponent implements OnInit {
     return this.feedbackForm.controls;
   }
 
+  onClose() {
+    this.diaglogRef.close('');
+  }
   resetForm() {
     this.feedbackForm = this.fb.group({
       name: ['', Validators.required],

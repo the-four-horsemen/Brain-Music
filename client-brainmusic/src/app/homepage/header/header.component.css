@@ -1,7 +1,7 @@
 .navbar {
   background: rgba(0, 0, 0, 0.3) !important;
   font-size: 20px !important;
-  color: #fff;
+  padding-left: 0 !important;
 }
 
 .navbar-nav li a {
@@ -15,4 +15,3 @@
 .navbar-expand-lg .navbar-toggler {
   border-color: transparent;
 }
-

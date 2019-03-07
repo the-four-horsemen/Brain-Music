@@ -1,5 +1,7 @@
-<div class="background-feedback">
-  <div class="container">
+<div class="container">
+  <div class="close">
+    <button (click)="onClose()"><i class="fas fa-times"></i></button>
+  </div>
     <form class="form" [formGroup]="feedbackForm" (ngSubmit)="onSend()">
       <h2>CONTACT US</h2>
       <p type="Name:"><input class="name" placeholder="Write your name here.." formControlName="name"></p>
@@ -24,4 +26,3 @@
       </div>
     </form>
   </div>
-</div>

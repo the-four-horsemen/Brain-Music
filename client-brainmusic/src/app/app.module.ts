@@ -49,6 +49,9 @@ import {MainComponent} from './homepage/main/main.component';
     MatDialogModule,
     BrowserAnimationsModule
   ],
+  entryComponents: [
+    FeedbackComponent
+  ],
   providers: [
     RegisterService,
     EmailService,

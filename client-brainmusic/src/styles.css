@@ -8,14 +8,11 @@
   background: linear-gradient(to right, #ff5722, #ff9800);
 }
 
-.background-feedback {
-  height: 100%;
-  background: linear-gradient(to left, rgba(236, 0, 140, 0.7), rgba(252, 103, 103, 0.7));
-}
-
 .navbar-brand {
   background: url("assets/background/logo.png") no-repeat 50% 50%;
-  background-size: contain;
-  width: 180px;
+  background-size: 80px 78px;
+  width: 100px;
   height: 60px;
+  margin: 0 !important;
+  padding: 0 !important;
 }
