@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FeedbackService} from '../shared/feedback.service';
-import {Feedback} from '../shared/feedback.model';
+import {FeedbackService} from '../../shared/feedback.service';
+import {Feedback} from '../../shared/feedback.model';
 
 @Component({
   selector: 'app-list-feedback',

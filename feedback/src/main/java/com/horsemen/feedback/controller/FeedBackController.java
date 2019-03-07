@@ -4,12 +4,11 @@ import com.horsemen.feedback.exception.ResourceNotFoundException;
 import com.horsemen.feedback.model.FeedBack;
 import com.horsemen.feedback.repository.FeedBackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -18,8 +17,8 @@ public class FeedBackController {
     FeedBackRepository feedBackRepository;
 
     @GetMapping("/admin/feedbacks")
-    public Page <FeedBack> getAllFeedbacks(Pageable pageable) {
-        return feedBackRepository.findAll(pageable);
+    public List <FeedBack> getAllFeedbacks() {
+        return feedBackRepository.findAll();
     }
 
     @PostMapping("/feedback")

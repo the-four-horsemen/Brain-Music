@@ -10,7 +10,7 @@ import {RegisterService} from './shared/register.service';
 import {EmailFormComponent} from './admin/email-form/email-form.component';
 import {AlertComponent} from './alert/alert.component';
 import {EmailService} from './shared/email.service';
-import {ListFeedbackComponent} from './list-feedback/list-feedback.component';
+import {ListFeedbackComponent} from './admin/list-feedback/list-feedback.component';
 import {PlayerComponent} from './user/player/player.component';
 import {MatDialogModule, MatSnackBarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
