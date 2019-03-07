@@ -2,3 +2,22 @@
   margin-bottom: 10em;
   margin-top: 5em;
 }
+
+.navbar {
+  background: rgba(0, 0, 0, 0.3) !important;
+  font-size: 20px !important;
+  color: #fff;
+}
+
+.navbar-nav li a {
+  color: #fff;
+}
+
+.navbar-nav li a:hover {
+  color: #7bc0ff !important;
+}
+
+.navbar-expand-lg .navbar-toggler {
+  border-color: transparent;
+}
+
