@@ -1,6 +1,6 @@
 
-$(
-  function () {
+
+  function runjs() {
     console.log("da bat js")
     var aud = $('audio')[0];
     $(".listSong").click(function () {
@@ -28,7 +28,7 @@ $(
     aud.ontimeupdate = function () {
       $('.progress').css('width', aud.currentTime / aud.duration * 100 + '%')
     }
-  })
+  }
 
 
 

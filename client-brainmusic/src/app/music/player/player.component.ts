@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MusiclistService} from '../../shared/musiclist.service';
 import {Music} from '../../shared/music.model';
 
+declare function runjs():any;
 
 @Component({
   selector: 'app-player',
@@ -16,6 +17,7 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit() {
     this.service.refreshList();
+    runjs();
   }
 
   populateForm(song: Music) {
