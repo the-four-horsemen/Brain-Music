@@ -18,6 +18,10 @@ import {AdminComponent} from './admin/admin.component';
 import {UserComponent} from './user/user.component';
 import {FeedbackComponent} from './user/feedback/feedback.component';
 import {FeedbackService} from './shared/feedback.service';
+import {HomepageComponent} from './homepage/homepage.component';
+import {FooterComponent} from './homepage/footer/footer.component';
+import {HeaderComponent} from './homepage/header/header.component';
+import {MainComponent} from './homepage/main/main.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import {FeedbackService} from './shared/feedback.service';
     PlayerComponent,
     AdminComponent,
     UserComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    HomepageComponent,
+    FooterComponent,
+    HeaderComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
