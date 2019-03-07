@@ -11,7 +11,7 @@ import {EmailFormComponent} from './admin/email-form/email-form.component';
 import {AlertComponent} from './alert/alert.component';
 import {EmailService} from './shared/email.service';
 import {ListFeedbackComponent} from './admin/list-feedback/list-feedback.component';
-import {PlayerComponent} from './user/player/player.component';
+import {PlayerComponent} from './music/player/player.component';
 import {MatDialogModule, MatSnackBarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AdminComponent} from './admin/admin.component';
@@ -22,6 +22,7 @@ import {HomepageComponent} from './homepage/homepage.component';
 import {FooterComponent} from './homepage/footer/footer.component';
 import {HeaderComponent} from './homepage/header/header.component';
 import {MainComponent} from './homepage/main/main.component';
+import {MusicComponent} from './music/music.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +32,14 @@ import {MainComponent} from './homepage/main/main.component';
     AlertComponent,
     PlayerComponent,
     ListFeedbackComponent,
-    PlayerComponent,
     AdminComponent,
     UserComponent,
     FeedbackComponent,
     HomepageComponent,
     FooterComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,
