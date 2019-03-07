@@ -23,6 +23,7 @@ import {HeaderComponent} from './homepage/header/header.component';
 import {MainComponent} from './homepage/main/main.component';
 import {MusiclistService} from './shared/musiclist.service';
 import {PlayerComponent} from './music/player/player.component';
+import { ManageMusicComponent } from './admin/manage-music/manage-music.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {PlayerComponent} from './music/player/player.component';
     FooterComponent,
     HeaderComponent,
     MainComponent,
+    ManageMusicComponent,
   ],
   imports: [
     BrowserModule,
