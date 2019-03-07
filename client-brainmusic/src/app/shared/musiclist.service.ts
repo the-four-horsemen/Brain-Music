@@ -10,7 +10,7 @@ export class MusiclistService {
 
   formData: Music;
   list: Music[];
-  private API_URL = 'http://localhost:8088/admin/songs/';
+  private API_URL = 'http://localhost:8080/admin/songs/';
 
   constructor(private http: HttpClient) {
   }
