@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
-import {Music} from "./music.model";
+import {Injectable} from '@angular/core';
+
 import {HttpClient} from '@angular/common/http';
+import {Music} from './music.model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +10,7 @@ export class MusiclistService {
 
   formData: Music;
   list: Music[];
-  private API_URL = 'http://localhost:8080/admin/songs/';
+  private API_URL = 'http://localhost:8088/admin/songs/';
 
   constructor(private http: HttpClient) {
   }

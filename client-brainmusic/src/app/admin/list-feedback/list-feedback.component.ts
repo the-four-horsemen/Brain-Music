@@ -22,6 +22,9 @@ export class ListFeedbackComponent implements OnInit {
     });
   }
 
+  onSendFeedback(row){
+}
+
   populateForm(feedback: Feedback) {
     this.service.formData = Object.assign({}, feedback);
   }

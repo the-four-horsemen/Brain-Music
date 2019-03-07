@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {RegisterFormComponent} from './user/register-form/register-form.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RegisterService} from './shared/register.service';
 import {EmailFormComponent} from './admin/email-form/email-form.component';
@@ -23,6 +23,7 @@ import {FooterComponent} from './homepage/footer/footer.component';
 import {HeaderComponent} from './homepage/header/header.component';
 import {MainComponent} from './homepage/main/main.component';
 import {MusicComponent} from './music/music.component';
+import {ManageMusicComponent} from './admin/manage-music/manage-music.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {MusicComponent} from './music/music.component';
     FooterComponent,
     HeaderComponent,
     MainComponent,
-    MusicComponent
+    MusicComponent,
+    ManageMusicComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import {MusicComponent} from './music/music.component';
     HttpClientModule,
     MatSnackBarModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   entryComponents: [
     FeedbackComponent

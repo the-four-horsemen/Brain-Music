@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Music} from '../../shared/music.model';
 import {NgForm} from '@angular/forms';
 import {MusiclistService} from '../../shared/musiclist.service';
@@ -53,7 +53,7 @@ export class ManageMusicComponent implements OnInit {
     form.value.category = {
       id: 2,
       name: 'Chillout'
-    }
+    };
     if (form.value.id == null) {
       this.insertRecord(form);
     } else {
@@ -62,7 +62,6 @@ export class ManageMusicComponent implements OnInit {
   }
 
   insertRecord(form: NgForm) {
-
 
 
     this.service.postSong(form.value).subscribe(res => {

@@ -7,19 +7,18 @@
     <td>Song Url</td>
   </tr>
   </thead>
-  <tr class="listSong" *ngFor="let song of service.list">
+  <tr *ngFor="let song of service.list" class="listSong">
     <td (click)="populateForm(song)">{{song.name}}</td>
     <td (click)="populateForm(song)">{{song.category.name}}</td>
     <td (click)="populateForm(song)">{{song.imageUrl}}</td>
     <td (click)="populateForm(song)">{{song.songUrl}}</td>
     <td>
-      <button class="btn btn-sm btn-outline-danger" (click)="onDelete(song.id)"><i class="fas fa-trash-alt"></i>
+      <button (click)="onDelete(song.id)" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i>
       </button>
     </td>
   </tr>
 
 </table>
-
 
 
 <form #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">

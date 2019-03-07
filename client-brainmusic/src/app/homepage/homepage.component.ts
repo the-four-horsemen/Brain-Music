@@ -22,7 +22,7 @@ export class HomepageComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '40%';
+    dialogConfig.maxWidth = '100%';
     dialogConfig.height = '90%';
     this.dialog.open(FeedbackComponent, dialogConfig);
   }
