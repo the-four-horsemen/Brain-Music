@@ -26,9 +26,6 @@ export class FeedbackComponent implements OnInit {
     return this.feedbackForm.controls;
   }
 
-  onClose() {
-    this.diaglogRef.close('');
-  }
   resetForm() {
     this.feedbackForm = this.fb.group({
       name: ['', Validators.required],
@@ -47,6 +44,7 @@ export class FeedbackComponent implements OnInit {
           console.log(error);
         });
       this.resetForm();
+      this.diaglogRef.close('');
     }
   }
 }

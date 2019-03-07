@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MusiclistService} from '../../shared/musiclist.service';
 import {Music} from '../../shared/music.model';
 
@@ -6,7 +6,7 @@ import {Music} from '../../shared/music.model';
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
-  styleUrls: ['./player.component.scss']
+  styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
   formData: Music;

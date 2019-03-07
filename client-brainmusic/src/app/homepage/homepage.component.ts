@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FeedbackService} from '../shared/feedback.service';
-import {MatDialog, MatDialogConfig} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {FeedbackComponent} from '../user/feedback/feedback.component';
 
 @Component({
@@ -17,14 +17,14 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
   }
 
-  onShow() {
-    // this.service.initializeFormGroup();
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.maxWidth = '100%';
-    dialogConfig.height = '90%';
-    this.dialog.open(FeedbackComponent, dialogConfig);
+  openDialog(): void {
+    const dialogRef = this.dialog.open(FeedbackComponent, {
+      maxWidth: '100%',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }
 

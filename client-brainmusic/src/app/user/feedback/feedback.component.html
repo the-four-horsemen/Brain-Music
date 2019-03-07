@@ -1,8 +1,5 @@
 <div class="container">
     <form class="form" [formGroup]="feedbackForm" (ngSubmit)="onSend()">
-      <div class="close">
-        <button (click)="onClose()"><i class="fas fa-times"></i></button>
-      </div>
       <h2>CONTACT US</h2>
       <p type="Name:"><input class="name" placeholder="Write your name here.." formControlName="name"></p>
       <span class="alert p-1" role="alert"
