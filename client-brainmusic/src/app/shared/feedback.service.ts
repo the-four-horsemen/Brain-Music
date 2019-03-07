@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Feedback} from './feedback.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +26,4 @@ export class FeedbackService {
     return this.http.post<Feedback>(this.API_URL_USER, feedback);
   }
 
-  initializeFormGroup() {
-
-  }
 }

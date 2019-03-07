@@ -24,7 +24,7 @@ const routes: Routes = [
     path: 'music', component: MusicComponent
   },
   {
-    path: 'admin', component: ManageMusicComponent
+    path: 'admin', component: AdminComponent
   }
 ];
 

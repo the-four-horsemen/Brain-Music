@@ -12,7 +12,8 @@ import {AlertComponent} from './alert/alert.component';
 import {EmailService} from './shared/email.service';
 import {ListFeedbackComponent} from './admin/list-feedback/list-feedback.component';
 import {PlayerComponent} from './music/player/player.component';
-import {MatDialogModule, MatSnackBarModule} from '@angular/material';
+import {MatCardModule, MatDialogModule, MatSnackBarModule, MatToolbarModule} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AdminComponent} from './admin/admin.component';
 import {UserComponent} from './user/user.component';
@@ -51,10 +52,14 @@ import {ManageMusicComponent} from './admin/manage-music/manage-music.component'
     MatSnackBarModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   entryComponents: [
-    FeedbackComponent
+    FeedbackComponent,
+    EmailFormComponent
   ],
   providers: [
     RegisterService,

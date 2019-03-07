@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FeedbackService} from '../../shared/feedback.service';
 import {Feedback} from '../../shared/feedback.model';
+import {EmailFormComponent} from '../email-form/email-form.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-list-feedback',
@@ -9,23 +11,30 @@ import {Feedback} from '../../shared/feedback.model';
 })
 export class ListFeedbackComponent implements OnInit {
 
-  constructor(public service: FeedbackService) {
-  }
+  isPopupOpened = true;
+
+  constructor(private dialog: MatDialog,
+              private feedbackservice: FeedbackService) { }
+
 
   ngOnInit() {
-    this.service.getList();
+    this.feedbackservice.getList();
   }
-  onDelete(id: number) {
-    console.log(id);
-    this.service.deleteFeedback(id).subscribe(res => {
-      this.service.getList();
+
+  editFeedback(row) {
+    this.isPopupOpened = true;
+    const dialogRef = this.dialog.open(EmailFormComponent, {
+      maxWidth: '60%',
+      autoFocus: true
+    });
+
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.isPopupOpened = false;
     });
   }
 
-  onSendFeedback(row){
-}
-
-  populateForm(feedback: Feedback) {
-    this.service.formData = Object.assign({}, feedback);
+  deleteFeedback(id: number) {
+    this.feedbackservice.deleteFeedback(id).subscribe(res => this.feedbackservice.getList());
   }
 }
