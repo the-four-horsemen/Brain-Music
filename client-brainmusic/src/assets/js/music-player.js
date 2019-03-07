@@ -1,8 +1,10 @@
 
 $(
   function () {
+    console.log("da bat js")
     var aud = $('audio')[0];
     $(".listSong").click(function () {
+      console.log("click")
       aud.play();
       $('.play-pause').removeClass('icon-play');
       $('.play-pause').addClass('icon-stop');
