@@ -1,7 +1,8 @@
 
 .container {
-  height: 100%;
-  padding-top: 50px !important;
+  /*height: 100%;*/
+  padding-top: 15% !important;
+  height: 600px;
   background: linear-gradient(to left, rgba(0, 152, 236, 0.7), rgba(135, 148, 252, 0.7));
 }
 
