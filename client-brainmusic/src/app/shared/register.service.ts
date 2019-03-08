@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class RegisterService {
-  private readonly API_URL = 'http://localhost:8080/register';
+  private readonly API_URL = 'http://localhost:8086/register';
 
   constructor(private http: HttpClient) {
   }
