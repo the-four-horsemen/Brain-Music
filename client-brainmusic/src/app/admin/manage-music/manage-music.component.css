@@ -1,7 +1,11 @@
-.table thead{
-  font-size: 2em;
-  font-weight: bolder;
+.fas {
+  cursor: pointer;
 }
-h1 {
-  font-size: 3em;
+
+.container-fluid {
+  margin-top: 25px;
+}
+
+form {
+  margin-top: 25px !important;
 }

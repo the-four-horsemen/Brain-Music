@@ -18,7 +18,7 @@ public class SongsController {
     SongsRepository songsRepository;
 
     @GetMapping("/admin/songs")
-    public List<Songs> getAllSongs() {
+    public List <Songs> getAllSongs() {
         return songsRepository.findAll();
     }
 
@@ -28,7 +28,7 @@ public class SongsController {
     }
 
     @DeleteMapping("/admin/songs/{id}")
-    public ResponseEntity<?> deleteSongs(@PathVariable(value = "id") Long songsId) {
+    public ResponseEntity <?> deleteSongs(@PathVariable(value = "id") Long songsId) {
         Songs songs = songsRepository.findById(songsId)
                 .orElseThrow(() -> new ResourceNotFoundException("Songs", "id", songsId));
 
@@ -36,6 +36,7 @@ public class SongsController {
 
         return ResponseEntity.ok().build();
     }
+
     @GetMapping("/admin/songs/{id}")
     public Songs getSongsById(@PathVariable(value = "id") Long songsId) {
         return songsRepository.findById(songsId)
@@ -44,7 +45,7 @@ public class SongsController {
 
     @PutMapping("/admin/songs/{id}")
     public Songs updateSongs(@PathVariable(value = "id") Long songsId,
-                           @Valid @RequestBody Songs songsDetails) {
+                             @Valid @RequestBody Songs songsDetails) {
 
         Songs songs = songsRepository.findById(songsId)
                 .orElseThrow(() -> new ResourceNotFoundException("Songs", "id", songsId));

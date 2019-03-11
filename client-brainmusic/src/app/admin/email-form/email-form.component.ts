@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Email} from '../../shared/email.model';
 import {EmailService} from '../../shared/email.service';
 import {NotificationService} from '../../shared/notification.service';
+import {MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-email-form',
@@ -16,7 +17,8 @@ export class EmailFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               public service: EmailService,
-              public notificationService: NotificationService) {
+              public notificationService: NotificationService,
+              private diaglogRef: MatDialogRef<EmailFormComponent>) {
   }
 
   ngOnInit() {
@@ -46,6 +48,7 @@ export class EmailFormComponent implements OnInit {
         });
       this.notificationService.success('Submited Successfully!');
       this.resetForm();
+      this.diaglogRef.close('');
     }
   }
 }

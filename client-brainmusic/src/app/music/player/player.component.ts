@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MusiclistService} from '../../shared/musiclist.service';
 import {Music} from '../../shared/music.model';
 
-declare function runjs():any;
+declare function runjs(): any;
 
 @Component({
   selector: 'app-player',
