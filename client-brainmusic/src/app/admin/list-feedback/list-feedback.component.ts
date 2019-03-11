@@ -14,11 +14,11 @@ export class ListFeedbackComponent implements OnInit {
   isPopupOpened = true;
 
   constructor(private dialog: MatDialog,
-              private feedbackservice: FeedbackService) { }
+              private feedbackService: FeedbackService) { }
 
 
   ngOnInit() {
-    this.feedbackservice.getList();
+    this.feedbackService.getList();
   }
 
   editFeedback(row) {
@@ -35,6 +35,6 @@ export class ListFeedbackComponent implements OnInit {
   }
 
   deleteFeedback(id: number) {
-    this.feedbackservice.deleteFeedback(id).subscribe(res => this.feedbackservice.getList());
+    this.feedbackService.deleteFeedback(id).subscribe(res => this.feedbackService.getList());
   }
 }

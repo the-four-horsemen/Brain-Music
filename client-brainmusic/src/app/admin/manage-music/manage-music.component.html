@@ -27,30 +27,36 @@
       </div>
     </mat-card-content>
   </mat-card>
-  <div class="container">
-    <form #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
-      <div type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id"></div>
-      <div class="form-group">
-        <label>Name</label>
-        <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" required>
-        <div class="validation-error" *ngIf="name.invalid && name.touched">This field is required.</div>
-      </div>
-      <div class="form-group">
-        <label>Image Url</label>
-        <input name="imageUrl" #imageUrl="ngModel" [(ngModel)]="service.formData.imageUrl" class="form-control"
-               required>
-        <div class="validation-error" *ngIf="imageUrl.invalid && imageUrl.touched">This field is required.</div>
-      </div>
-      <div class="form-group">
-        <label>Song Url</label>
-        <input name="songUrl" #songUrl="ngModel" [(ngModel)]="service.formData.songUrl" class="form-control" required>
-        <div class="validation-error" *ngIf="songUrl.invalid && songUrl.touched">This field is required.</div>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-lg btn-primary" [disabled]="form.invalid">SUBMIT</button>
-      </div>
-    </form>
-  </div>
-</div>
 
+  <mat-card class="edit-form">
+    <mat-card-header>
+      <mat-toolbar class="toolbar">
+        <mat-card-title>Edit Songs</mat-card-title>
+        <span class="toolbar-spacer"></span>
+      </mat-toolbar>
+    </mat-card-header>
+    <mat-card-content class="container">
+      <form class="example-form" #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+        <div type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id"></div>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" name="name" #name="ngModel" [(ngModel)]="service.formData.name" required>
+          <div class="validation-error" *ngIf="name.invalid && name.touched">This field is required.</div>
+        </mat-form-field>
 
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Image Url" name="imageUrl" #imageUrl="ngModel"
+                 [(ngModel)]="service.formData.imageUrl" required>
+          <div class="validation-error" *ngIf="imageUrl.invalid && imageUrl.touched">This field is required.</div>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Song Url" name="songUrl" #songUrl="ngModel"
+                 [(ngModel)]="service.formData.songUrl" required>
+          <div class="validation-error" *ngIf="songUrl.invalid && songUrl.touched">This field is required.</div>
+        </mat-form-field>
+        <div class="example-button-row">
+          <button mat-stroked-button color="primary" [disabled]="form.invalid">Submit</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>

@@ -12,7 +12,15 @@ import {AlertComponent} from './alert/alert.component';
 import {EmailService} from './shared/email.service';
 import {ListFeedbackComponent} from './admin/list-feedback/list-feedback.component';
 import {PlayerComponent} from './music/player/player.component';
-import {MatCardModule, MatDialogModule, MatSnackBarModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSnackBarModule,
+  MatToolbarModule
+} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AdminComponent} from './admin/admin.component';
@@ -25,6 +33,7 @@ import {HeaderComponent} from './homepage/header/header.component';
 import {MainComponent} from './homepage/main/main.component';
 import {MusicComponent} from './music/music.component';
 import {ManageMusicComponent} from './admin/manage-music/manage-music.component';
+
 // import {NavbarHeaderComponent} from './navbar-header/navbar-header.component';
 
 @NgModule({
@@ -57,7 +66,10 @@ import {ManageMusicComponent} from './admin/manage-music/manage-music.component'
     FormsModule,
     MatCardModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   entryComponents: [
     FeedbackComponent,
