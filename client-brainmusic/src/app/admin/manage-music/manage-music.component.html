@@ -13,12 +13,14 @@
           <th>Name</th>
           <th>Image Url</th>
           <th>Song Url</th>
+          <th>Category</th>
           <th>Delete</th>
           </thead>
           <tr *ngFor="let song of service.list">
             <td (click)="populateForm(song)">{{song.name}}</td>
             <td (click)="populateForm(song)">{{song.imageUrl}}</td>
             <td (click)="populateForm(song)">{{song.songUrl}}</td>
+            <td (click)="populateForm(song)">{{song.category}}</td>
             <td>
               <mat-icon (click)="onDelete(song.id)"><i class="fas fa-trash-alt"></i></mat-icon>
             </td>
@@ -54,6 +56,17 @@
                  [(ngModel)]="service.formData.songUrl" required>
           <div class="validation-error" *ngIf="songUrl.invalid && songUrl.touched">This field is required.</div>
         </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-select name="category" [(ngModel)]="service.formData.category">
+            <mat-option>None</mat-option>
+            <mat-option value="Relax">Relax</mat-option>
+            <mat-option value="ChillOut">Chill Out</mat-option>
+            <mat-option value="EDM">EDM</mat-option>
+          </mat-select>
+        </mat-form-field>
+
         <div class="example-button-row">
           <button mat-stroked-button color="primary" [disabled]="form.invalid">Submit</button>
         </div>

@@ -17,7 +17,7 @@ import {
   MatCardModule,
   MatDialogModule,
   MatFormFieldModule,
-  MatInputModule,
+  MatInputModule, MatOptionModule, MatSelectModule,
   MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -53,6 +53,7 @@ import {ManageMusicComponent} from './admin/manage-music/manage-music.component'
     MainComponent,
     MusicComponent,
     ManageMusicComponent,
+
     // NavbarHeaderComponent
   ],
   imports: [
@@ -69,7 +70,9 @@ import {ManageMusicComponent} from './admin/manage-music/manage-music.component'
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   entryComponents: [
     FeedbackComponent,

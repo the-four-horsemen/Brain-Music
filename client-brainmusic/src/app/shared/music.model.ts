@@ -3,5 +3,5 @@ export interface Music {
   name: string;
   songUrl: string;
   imageUrl: string;
-  category: object;
+  category: string;
 }

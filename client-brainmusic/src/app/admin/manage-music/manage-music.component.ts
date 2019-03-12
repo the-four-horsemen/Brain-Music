@@ -10,6 +10,7 @@ import {MusiclistService} from '../../shared/musiclist.service';
 })
 export class ManageMusicComponent implements OnInit {
 
+
   formData: Music;
   private readonly API;
 
@@ -20,7 +21,6 @@ export class ManageMusicComponent implements OnInit {
 
   ngOnInit() {
     this.service.refreshList();
-
     // @ts-ignore
     this.resetForm();
 
@@ -40,28 +40,28 @@ export class ManageMusicComponent implements OnInit {
       name: '',
       imageUrl: '',
       songUrl: '',
-      category: {
-        id: '',
-        name: '',
-      },
+      category: '',
     };
-  }
+  };
 
-  onSubmit(form: NgForm) {
+
+  onSubmit(form : NgForm
+  ) {
     console.log(form.value);
 
-    form.value.category = {
-      id: 2,
-      name: 'Chillout'
-    };
+
     if (form.value.id == null) {
       this.insertRecord(form);
     } else {
       this.updateRecord(form);
     }
+
   }
 
-  insertRecord(form: NgForm) {
+  insertRecord(form
+                 :
+                 NgForm
+  ) {
 
 
     this.service.postSong(form.value).subscribe(res => {
@@ -70,7 +70,10 @@ export class ManageMusicComponent implements OnInit {
     });
   }
 
-  updateRecord(form: NgForm) {
+  updateRecord(form
+                 :
+                 NgForm
+  ) {
     if (confirm('Are you sure to do update this song')) {
       this.service.putSong(form.value).subscribe(res => {
         this.resetForm(form);
@@ -79,7 +82,10 @@ export class ManageMusicComponent implements OnInit {
     }
   }
 
-  onDelete(id: number) {
+  onDelete(id
+             :
+             number
+  ) {
     if (confirm('Are you sure to do delete this record')) {
       this.service.deleteSong(id).subscribe(res => {
         this.service.refreshList();
